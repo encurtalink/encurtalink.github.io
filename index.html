@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Espere 10 segundos...</title>
+  <title>Espere 10 segundos de ADS...</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     html, body {
@@ -41,7 +41,7 @@
 
     #goButton {
       display: none;
-      margin-top: 20px;
+      margin-top: 10px; /* Reduzido para aproximar do texto */
       padding: 12px 24px;
       font-size: 18px;
       background-color: #28a745;
@@ -60,15 +60,13 @@
 
   <h2>Aguarde... você será redirecionado</h2>
   <div id="countdown">10</div>
+  <button id="goButton">Ir para o site</button> <!-- MOVIDO para cima -->
 
   <div class="ad-box">
     <script src="https://vemtoutcheeg.com/400/9315385"></script>
   </div>
 
-  <button id="goButton">Ir para o site</button>
-
   <script>
-    // Obtém o parâmetro 'url' da URL
     const urlParams = new URLSearchParams(window.location.search);
     const finalURL = urlParams.get('url') || 'https://google.com';
 
