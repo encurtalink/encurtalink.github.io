@@ -3,29 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <title>Espere 10 segundos...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: Arial, sans-serif;
       text-align: center;
-      padding-top: 100px;
+      padding: 50px 20px;
       background-color: #f4f4f4;
     }
+
     h2 {
-      font-size: 28px;
+      font-size: 24px;
     }
+
     #countdown {
-      font-size: 26px;
+      font-size: 24px;
       font-weight: bold;
-      margin-top: 10px;
+      margin: 10px 0;
       color: #333;
     }
+
     .ad-box {
-      width: 300px;
+      width: 100%;
+      max-width: 320px;
       height: 250px;
-      margin: 40px auto;
+      margin: 30px auto;
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+
+    #goButton {
+      display: none;
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    #goButton:hover {
+      background-color: #218838;
     }
   </style>
 </head>
@@ -34,22 +55,24 @@
   <h2>Aguarde... você será redirecionado</h2>
   <div id="countdown">10</div>
 
-  <!-- Banner Monetag direto no HTML -->
   <div class="ad-box">
     <script src="https://vemtoutcheeg.com/400/9315385"></script>
   </div>
 
+  <button id="goButton" onclick="window.location.href='https://youtube.com'">Ir para o site</button>
+
   <script>
     let seconds = 10;
     const countdown = document.getElementById('countdown');
-    const finalURL = "https://youtube.com"; // Altere para o link desejado
+    const button = document.getElementById('goButton');
 
     const timer = setInterval(() => {
       seconds--;
       countdown.textContent = seconds;
       if (seconds <= 0) {
         clearInterval(timer);
-        window.location.href = finalURL;
+        countdown.style.display = 'none';
+        button.style.display = 'inline-block';
       }
     }, 1000);
   </script>
