@@ -2,24 +2,30 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Espere 10 segundos de ADS...</title>
+  <title>Espere 10 segundos...</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 50px 20px;
+    html, body {
+      height: 100%;
+      margin: 0;
       background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
     }
 
     h2 {
       font-size: 24px;
+      margin-bottom: 10px;
     }
 
     #countdown {
       font-size: 24px;
       font-weight: bold;
-      margin: 10px 0;
       color: #333;
     }
 
@@ -59,9 +65,13 @@
     <script src="https://vemtoutcheeg.com/400/9315385"></script>
   </div>
 
-  <button id="goButton" onclick="window.location.href='https://youtube.com'">Ir para o site</button>
+  <button id="goButton">Ir para o site</button>
 
   <script>
+    // Obtém o parâmetro 'url' da URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const finalURL = urlParams.get('url') || 'https://google.com';
+
     let seconds = 10;
     const countdown = document.getElementById('countdown');
     const button = document.getElementById('goButton');
@@ -75,6 +85,10 @@
         button.style.display = 'inline-block';
       }
     }, 1000);
+
+    button.addEventListener('click', () => {
+      window.location.href = finalURL;
+    });
   </script>
 
 </body>
