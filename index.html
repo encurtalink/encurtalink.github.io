@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Espere 5 segundos...</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      background-color: #f4f4f4;
+    }
+    #countdown {
+      font-size: 32px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .ad-box {
+      width: 300px;
+      height: 250px;
+      background-color: #ddd;
+      margin: 30px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: #333;
+      border: 2px dashed #888;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Aguarde... você será redirecionado</h2>
+
+  <!-- Simulação de anúncio -->
+  <div class="ad-box">
+    [ Anúncio Aqui ]
+  </div>
+
+  <div id="countdown">5</div>
+
+  <script>
+    let seconds = 5;
+    const countdown = document.getElementById('countdown');
+    const finalURL = "https://youtube.com"; // Redireciona para YouTube
+
+    const timer = setInterval(() => {
+      seconds--;
+      countdown.textContent = seconds;
+      if (seconds <= 0) {
+        clearInterval(timer);
+        window.location.href = finalURL;
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
