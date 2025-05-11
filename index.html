@@ -23,6 +23,12 @@
       margin-bottom: 10px;
     }
 
+    .center-image {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 10px;
+    }
+
     #countdown {
       font-size: 24px;
       font-weight: bold;
@@ -38,29 +44,13 @@
       align-items: center;
       justify-content: center;
     }
-
-    #goButton {
-      display: none;
-      margin-top: 10px; /* Reduzido para aproximar do texto */
-      padding: 12px 24px;
-      font-size: 18px;
-      background-color: #28a745;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    #goButton:hover {
-      background-color: #218838;
-    }
   </style>
 </head>
 <body>
 
   <h2>Aguarde... você será redirecionado</h2>
+  <img class="center-image" src="https://via.placeholder.com/150" alt="Imagem de espera">
   <div id="countdown">10</div>
-  <button id="goButton">Ir para o site</button> <!-- MOVIDO para cima -->
 
   <div class="ad-box">
     <script src="https://vemtoutcheeg.com/400/9315385"></script>
@@ -72,21 +62,15 @@
 
     let seconds = 10;
     const countdown = document.getElementById('countdown');
-    const button = document.getElementById('goButton');
 
     const timer = setInterval(() => {
       seconds--;
       countdown.textContent = seconds;
       if (seconds <= 0) {
         clearInterval(timer);
-        countdown.style.display = 'none';
-        button.style.display = 'inline-block';
+        window.location.href = finalURL;
       }
     }, 1000);
-
-    button.addEventListener('click', () => {
-      window.location.href = finalURL;
-    });
   </script>
 
 </body>
